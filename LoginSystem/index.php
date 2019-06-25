@@ -6,10 +6,12 @@ require "header.php";
 
        <?php
        if(isset($_SESSION['userId'])){
-            echo '<p class=login-status>You are looogged in!!</p>';
+            echo '<h1 class=login-status>Welcome</h1>';
+            echo '<img src="img/underconstruction.png" alt="nya">';
 
             }else{
-              echo '<p class=logout-status>You are logged out!</p>';
+              echo '<h1 class=logout-status>Please be patient</h1>';
+              echo '<img src="img/underconstruction.png" alt="nya">';
             }
         ?>
 

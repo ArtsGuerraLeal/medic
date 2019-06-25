@@ -21,6 +21,73 @@ h1{
 font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
 }
 
+button{
+  border:0px;
+  border-radius: 5px;
+  background: Tomato;
+  padding: 7px;
+  color: white
+
+}
+
+input{
+  border:0px;
+  border-radius: 5px;
+  padding: 5px;
+  background-color:  #f3f3f3;
+  height: 25px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  display: inline;
+}
+
+select{
+
+    border:0px;
+    border-radius: 5px;
+    padding: 5px;
+    background-color:  #f3f3f3;
+    height: 25px;
+    margin-top: 13px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    display: inline;
+
+}
+
+.calendar{
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.calendar caption{
+  margin-bottom: 20px;
+}
+
+.calendar .header{
+background: Tomato;
+color: #fff;
+}
+
+.calendar tr:nth-child(odd){
+background: #f0f0f0;
+
+}
+
+.calendar tr:nth-child(even){
+  background: #e0e0e0;
+
+
+}
+
+.calendar th,
+.calendar td{
+padding: 15px;
+border:  1px solid #eee;
+
+}
 
 .nav-header-main {
 background-color:  white;
@@ -190,4 +257,48 @@ margin-right: 5px;
   text-align: left;
   background-color: Tomato;
   color: white;
+}
+
+.client-add input{
+  border:0px;
+  border-radius: 5px;
+  padding: 5px;
+  background-color:  #f3f3f3;
+  height: 25px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  display: inline;
+}
+
+.client-detail button{
+  border:0px;
+  border-radius: 5px;
+  background: lightblue;
+  padding: 7px;
+  color: white
+}
+
+.client-delete button{
+  border:0px;
+  border-radius: 5px;
+  background: red;
+  padding: 7px;
+  color: white
+}
+
+.client-name p{
+
+}
+
+.TestDiv{
+  display: inline-flex;
+}
+
+.TestDiv form{
+  display: inline-flex;
+}
+
+.TestDiv button{
+  margin: 10px;
 }
