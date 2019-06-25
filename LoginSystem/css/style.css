@@ -1,0 +1,193 @@
+
+html{
+background-color:  #f3f3f3;
+margin: 0;
+}
+
+main{
+  background-color:  white;
+  color: black;
+  font-size: 16px;
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  text-align: center;
+  margin-top: 10px;
+  padding-top: 1px;
+  margin-bottom:  10px;
+  padding-bottom:  15px;
+
+}
+
+h1{
+font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+
+
+.nav-header-main {
+background-color:  white;
+  display: block;
+  overflow: hidden;
+  }
+
+.nav-header-main img{
+  float:left;
+  margin-left: 20px;
+  margin-right: 0px;
+}
+
+.nav-header-main ul {
+  display:inline-block;
+  list-style-type: none;
+  overflow: hidden;
+  background-color:  white;
+  margin-top: 20px;
+}
+
+.nav-header-main li {
+  display: inline;
+}
+
+.nav-header-main li a {
+  color: black;
+  font-size: 16px;
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  padding: 50px 15px;
+  opacity: 0.7;
+}
+
+.header-login {
+background-color:  white;  float: right;
+}
+
+.header-login form{
+  padding: 0px;
+  height: 24px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  display: inline-block;
+
+
+}
+.header-login input{
+  border:0px;
+  border-radius: 5px;
+  padding: 5px;
+  background-color:  #f3f3f3;
+  height: 25px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  display: inline;
+}
+
+.header-login button{
+  border:0px;
+  border-radius: 5px;
+  background: Tomato;
+  padding: 7px;
+  color: white
+}
+
+.header-login a{
+  color: black;
+  font-size: 16px;
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  padding: 5px 10px;
+  opacity: 0.7;
+
+}
+
+.form-logout button{
+margin: 10px;
+
+}
+
+.form-login button{
+margin: 10px;
+
+}
+
+.form-login a{
+margin-right: 5px;
+
+}
+
+.form-signup{
+  display:  inline-block;
+}
+
+.form-signup input{
+  border:0px;
+  border-radius: 5px;
+  padding: 5px;
+  background-color:  #f3f3f3;
+  height: 25px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  display:flex;
+}
+
+.form-signup button{
+  border:0px;
+  border-radius: 5px;
+  background: Tomato;
+  padding: 7px;
+  color: white;
+}
+
+.signuperror {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  text-align: center;
+  color: red;
+}
+
+.signupsuccess{
+  color: green;
+}
+
+.header-login p{
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  display: inline;
+}
+
+.client-add input{
+  border:0px;
+  border-radius: 5px;
+  padding: 5px;
+  background-color:  #f3f3f3;
+  height: 25px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  display: inline;
+}
+
+.client-add button{
+  border:0px;
+  border-radius: 5px;
+  background: Tomato;
+  padding: 7px;
+  color: white
+
+}
+
+.clienttable {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+   border-collapse: collapse;
+   width: 100%;
+}
+
+.clienttable td, .clienttable th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.clienttable th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: Tomato;
+  color: white;
+}
