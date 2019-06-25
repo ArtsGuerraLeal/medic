@@ -3,7 +3,7 @@
 
 $serverName = "localhost";
 $dbUsername = "root";
-$dbPassword = "";
+$dbPassword = "Xhfb62ur#";
 $dbName = "medicsystem";
 
 $conn = mysqli_connect($serverName,$dbUsername,$dbPassword,$dbName);
