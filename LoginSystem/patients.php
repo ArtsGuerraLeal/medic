@@ -33,14 +33,15 @@ require "header.php";
 </main>
 
 <main>
+
   <?php
 
   require 'includes/dbh.inc.php';
     $userid = $_SESSION['userId'];
-    $sql = "SELECT idClient,nameClient,businessName FROM clients WHERE userId = " . $userid;
+    $sql = "SELECT patientId,firstName,lastName FROM patients WHERE userId = " . $userid;
     $stmt = mysqli_stmt_init($conn);
   if(!mysqli_stmt_prepare($stmt,$sql)){
-      header("Location: /clients.php?error=sqlerror");
+      header("Location: /patients.php?error=sqlerror");
       exit();
   }else {
     $result = mysqli_query($conn, $sql);
