@@ -23,8 +23,9 @@ session_start();
 
     <?php
     if(isset($_SESSION['userId'])){
-      echo '<li> <a href="patients.php">Patients</a> </li>
-        <li> <a href="#">Appointments</a> </li>
+      echo
+       '<li> <a href="patients.php">Patients</a> </li>
+        <li> <a href="appointments.php">Appointments</a> </li>
         <li> <a href="#">Calendar</a> </li>
         <li> <a href="#">Treatements</a> </li>
         <li> <a href="#">Equipment</a> </li>

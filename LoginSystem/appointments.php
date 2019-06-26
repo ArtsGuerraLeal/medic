@@ -72,7 +72,7 @@ require "header.php";
     $stmt = mysqli_stmt_init($conn);
   if(!mysqli_stmt_prepare($stmt,$sql))
       {
-          header("Location: /patients.php?error=sqlerror");
+          header("Location: /appointments.php?error=sqlerror");
           exit();
       }
   else
