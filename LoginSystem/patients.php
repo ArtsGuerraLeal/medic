@@ -24,7 +24,7 @@ require "header.php";
             <input type="text" name="firstName" placeholder="Client name...">
             <input type="text" name="lastName" placeholder="Client business...">
                 <select>
-                  <option value="Male">Male/option>
+                  <option value="Male">Male</option>
                   <option value="Female">Female</option>
                 </select>
             <input type="date" name="birthDate" >
@@ -50,7 +50,7 @@ require "header.php";
 
   require 'includes/dbh.inc.php';
     $userid = $_SESSION['userId'];
-    $sql = "SELECT patientId,firstName,lastName,gender,birthDate,telephone,address,religion,civilStatus FROM patients WHERE userId = " . $userid;
+    $sql = "SELECT patientId,firstName,lastName,gender,birthDate,telephone,address,religion,civilStatus FROM patients WHERE userId = " . 1;
     $stmt = mysqli_stmt_init($conn);
   if(!mysqli_stmt_prepare($stmt,$sql)){
       header("Location: /patients.php?error=sqlerror");
