@@ -79,16 +79,16 @@ require "header.php";
           echo "<tr>
           <td>".$row["patientId"]."</td>
           <td>".$row["firstName"]. " ". $row["lastName"]."</td>
-          <td>".
+          <td>";
 
           if($row["gender"]==1){
-            "Male"
+          echo "Male";
           }else{
-            "Female"
+          echo "Female";
           }
 
 
-          ."</td>
+          "</td>
           <td>".$row["birthDate"]."</td>
           <td>".$row["telephone"]."</td>
           <td>".$row["address"]."</td>
