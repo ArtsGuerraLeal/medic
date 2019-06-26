@@ -80,15 +80,12 @@ require "header.php";
           <td>".$row["patientId"]."</td>
           <td>".$row["firstName"]. " ". $row["lastName"]."</td>
           <td>";
-
           if($row["gender"]==1){
           echo "Male";
           }else{
           echo "Female";
           }
-
-
-        echo "</td>
+          echo "</td>
           <td>".$row["birthDate"]."</td>
           <td>".$row["telephone"]."</td>
           <td>".$row["address"]."</td>
