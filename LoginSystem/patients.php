@@ -32,7 +32,7 @@ require "header.php";
             <input type="text" name="address" placeholder="Client name...">
             <input type="text" name="religion" placeholder="Client business...">
             <select>
-              <option value="single">Single/option>
+              <option value="single">Single</option>
               <option value="married">Married</option>
             </select>
             <button type="submit" name="client-submit">Add</button>
