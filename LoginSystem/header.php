@@ -16,7 +16,7 @@ session_start();
 <nav class="nav-header-main">
 
   <a class="header-logo" href="index.php">
-    <img src="img/logo3.png" alt="logo" width="80" height="80">
+    <img src="img/logo3.png" alt="logo" width="60" height="60">
   </a>
   <ul class="nav-links">
     <li> <a class="active" href="index.php">Home</a> </li>
