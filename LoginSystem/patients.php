@@ -54,7 +54,7 @@ require "header.php";
             }else{
               echo "Kept you waiting huh?";
             }
-            }
+
          ?>
 </main>
 
