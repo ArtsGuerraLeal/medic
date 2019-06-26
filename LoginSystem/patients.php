@@ -34,8 +34,8 @@ require "header.php";
           }
 
             echo '<form class = "client-add" action="includes/client-input.inc.php" method="post">
-            <input type="text" name="firstName" placeholder="Client name...">
-            <input type="text" name="lastName" placeholder="Client business...">
+            <input type="text" name="firstName" placeholder="First Name...">
+            <input type="text" name="lastName" placeholder="Last Name...">
                 <select>
                   <option value="Male">Male</option>
                   <option value="Female">Female</option>
@@ -45,7 +45,7 @@ require "header.php";
             <input type="text" name="address" placeholder="Client name...">
             <input type="text" name="religion" placeholder="Client business...">
             <select>
-              <option value="single">Single/option>
+              <option value="single">Single</option>
               <option value="married">Married</option>
             </select>
             <button type="submit" name="client-submit">Add</button>
@@ -64,7 +64,7 @@ require "header.php";
 
   require 'includes/dbh.inc.php';
     $userid = $_SESSION['userId'];
-    $sql = "SELECT patientId,firstName,lastName,gender,birthDate,telephone,address,religion,civilStatus FROM patients WHERE userId = " . 1;
+    $sql = "SELECT patientId,firstName,lastName,gender,birthDate,telephone,address,religion,civilStatus FROM patients WHERE userId = " . $userid;
     $stmt = mysqli_stmt_init($conn);
   if(!mysqli_stmt_prepare($stmt,$sql)){
       header("Location: /patients.php?error=sqlerror");
@@ -93,7 +93,13 @@ require "header.php";
           echo "<tr>
           <td>".$row["patientId"]."</td>
           <td>".$row["firstName"]. " ". $row["lastName"]."</td>
-          <td>".$row["gender"]."</td>
+          <td>";
+          if($row["gender"]==1){
+          echo "Male";
+          }else{
+          echo "Female";
+          }
+          echo "</td>
           <td>".$row["birthDate"]."</td>
           <td>".$row["telephone"]."</td>
           <td>".$row["address"]."</td>

@@ -16,7 +16,7 @@ session_start();
 <nav class="nav-header-main">
 
   <a class="header-logo" href="index.php">
-    <img src="img/logo2.png" alt="logo" width="60" height="60">
+    <img src="img/logo3.png" alt="logo" width="60" height="60">
   </a>
   <ul class="nav-links">
     <li> <a class="active" href="index.php">Home</a> </li>
@@ -24,9 +24,12 @@ session_start();
     <?php
     if(isset($_SESSION['userId'])){
       echo '<li> <a href="patients.php">Patients</a> </li>
-        <li> <a href="hosting.php">Hosting</a> </li>
-        <li> <a href="calendar.php">Calendar</a> </li>
-        <li> <a href="#">Payments</a> </li>';
+        <li> <a href="#">Appointments</a> </li>
+        <li> <a href="#">Calendar</a> </li>
+        <li> <a href="#">Treatements</a> </li>
+        <li> <a href="#">Equipment</a> </li>
+
+        <li> <a href="#">Users</a> </li>';
     }
 ?>
 
