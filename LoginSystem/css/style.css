@@ -271,6 +271,11 @@ margin-right: 5px;
   display: inline;
 }
 
+.client-add p{
+
+  display: inline;
+}
+
 .client-detail button{
   border:0px;
   border-radius: 5px;
