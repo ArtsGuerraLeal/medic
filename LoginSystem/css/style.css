@@ -220,15 +220,15 @@ margin-right: 5px;
 }
 
 .client-add input{
-  border:0px;
-  border-radius: 5px;
-  padding: 5px;
-  background-color:  #f3f3f3;
-  height: 25px;
-  margin-top: 5px;
-  margin-bottom: 10px;
-  margin-right: 10px;
-  display: inline;
+  border:0px !important ;
+  border-radius: 5px !important ;
+  padding: 5px !important ;
+  background-color:  #f3f3f3 !important ;
+  height: 25px !important ;
+  margin-top: 5px !important ;
+  margin-bottom: 10px !important ;
+  margin-right: 10px !important ;
+  display: inline !important ;
 }
 
 .client-add button{

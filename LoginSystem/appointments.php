@@ -42,6 +42,7 @@ require "header.php";
 
             <input type="text" name="firstName" placeholder="First Name...">
             <input type="text" name="lastName" placeholder="Last Name...">
+            <p>Birthdate: </p>
             <input type="date" name="birthDate" >
 
             <select>
