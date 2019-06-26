@@ -110,7 +110,7 @@ require "header.php";
           $d = date_parse_from_format("Y-m-d",$row["birthDate"]);
           $month = $d["month"];
           $year = $d["year"];
-          $age = $year - date("Y");
+          $age =  date("Y") - $year;
 
           echo $age;
 
