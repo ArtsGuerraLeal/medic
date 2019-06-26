@@ -82,14 +82,12 @@ require "header.php";
     echo
     '<table class = "clienttable">
       <tr>
-        <th>Patient Id</th>
+        <th>Appointment ID</th>
+        <th>Patient ID</th>
         <th>Name</th>
-        <th>Gender</th>
-        <th>Birth Date</th>
-        <th>Telephone</th>
-        <th>Address</th>
-        <th>Religion</th>
-        <th>Civil Status</th>
+        <th>Age</th>
+        <th>Treatement</th>
+        <th>Treatement Date</th>
         <th></th>
         <th></th>
       </tr>';
@@ -104,21 +102,23 @@ require "header.php";
           <td>".$row["firstName"]. " ". $row["lastName"]."</td>
           <td>";
 
-          if($row["gender"]==1)
-          {
-            echo "Male";
-          }
-          else
-          {
-            echo "Female";
-          }
+          echo "</td>
+          <td>";
+
+          date_default_timezone_set("America/New_York");
+          $transdate = date('m-d-Y', time());
+          $d = date_parse_from_format("Y-m-d",$row["birthDate"]);
+          $month = $d["month"];
+          $year = $d["year"];
+          $age = $year - date("Y");
+
+          echo $age;
+
 
           echo "</td>
-          <td>".$row["birthDate"]."</td>
-          <td>".$row["telephone"]."</td>
-          <td>".$row["address"]."</td>
-          <td>".$row["religion"]."</td>
-          <td>".$row["civilStatus"]."</td>
+          <td>"."Treatement"."</td>
+          <td>".""."</td>
+
           <td>".
 
           '<form class = "client-delete" action="includes/client-delete.inc.php" method="post">
