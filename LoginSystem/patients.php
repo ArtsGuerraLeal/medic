@@ -32,7 +32,7 @@ require "header.php";
             <input type="text" name="address" placeholder="Client name...">
             <input type="text" name="religion" placeholder="Client business...">
             <select>
-              <option value="single">Single</option>
+              <option value="single">Single/option>
               <option value="married">Married</option>
             </select>
             <button type="submit" name="client-submit">Add</button>
@@ -50,7 +50,7 @@ require "header.php";
 
   require 'includes/dbh.inc.php';
     $userid = $_SESSION['userId'];
-    $sql = "SELECT patientId,firstName,lastName,gender,birthDate,telephone,address,religion,civilStatus FROM patients WHERE userId = " . 1;
+    $sql = "SELECT patientId,firstName,lastName,gender,birthDate,telephone,address,religion,civilStatus FROM patients WHERE userId = " . $userid;
     $stmt = mysqli_stmt_init($conn);
   if(!mysqli_stmt_prepare($stmt,$sql)){
       header("Location: /patients.php?error=sqlerror");
