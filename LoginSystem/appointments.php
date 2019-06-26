@@ -9,7 +9,7 @@ require "header.php";
 
        if(isset($_SESSION['userId'])){
 
-         echo '<h1>'. ucwords($_SESSION['userUid'])."'s Patients". '</h1>';
+         echo '<h1>'. ucwords($_SESSION['userUid'])."'s Appointments". '</h1>';
 
          if(isset($_GET['error']))
          {
@@ -35,23 +35,21 @@ require "header.php";
           }
 
             echo
-            //Input Form
-            '<form class = "client-add" action="includes/client-input.inc.php" method="post">
+            //Search Form
+            '<form class = "client-add" action="includes/appointment-input.inc.php" method="post">
+
+            <input type="text" name="patientId" placeholder="Patient ID...">
+
             <input type="text" name="firstName" placeholder="First Name...">
             <input type="text" name="lastName" placeholder="Last Name...">
-                <select>
-                  <option value="Male">Male</option>
-                  <option value="Female">Female</option>
-                </select>
             <input type="date" name="birthDate" >
-            <input type="text" name="telephone" placeholder="Client business...">
-            <input type="text" name="address" placeholder="Client name...">
-            <input type="text" name="religion" placeholder="Client business...">
-                <select>
-                  <option value="single">Single</option>
-                  <option value="married">Married</option>
-                </select>
-            <button type="submit" name="client-submit">Add</button>
+
+            <select>
+              <option value="single">Treatement 1</option>
+              <option value="married">Treatement 2</option>
+            </select>
+
+            <button type="submit" name="client-submit">Search</button>
             </form>';
 
             }
