@@ -88,7 +88,7 @@ require "header.php";
           }
 
 
-          "</td>
+        echo "</td>
           <td>".$row["birthDate"]."</td>
           <td>".$row["telephone"]."</td>
           <td>".$row["address"]."</td>
