@@ -99,6 +99,7 @@ require "header.php";
           echo
           "<tr>
           <td>".$row["patientId"]."</td>
+          <td>".$row["patientId"]."</td>
           <td>".$row["firstName"]. " ". $row["lastName"]."</td>
           <td>";
 
