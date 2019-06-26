@@ -23,7 +23,7 @@ session_start();
 
     <?php
     if(isset($_SESSION['userId'])){
-      echo '<li> <a href="clients.php">Clients</a> </li>
+      echo '<li> <a href="patients.php">Patients</a> </li>
         <li> <a href="hosting.php">Hosting</a> </li>
         <li> <a href="calendar.php">Calendar</a> </li>
         <li> <a href="#">Payments</a> </li>';

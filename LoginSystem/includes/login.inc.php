@@ -25,6 +25,7 @@ if(isset($_POST['login-submit'])){
                 header("Location: ../index.php?error=wrongpwd");
                 exit();
             }elseif($pwdCheck==true){
+              //set session variables
               session_start();
               $_SESSION['userId'] = $row['idUsers'];
               $_SESSION['userUid'] = $row['uidUsers'];
