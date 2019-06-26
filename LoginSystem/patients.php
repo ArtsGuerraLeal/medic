@@ -21,8 +21,20 @@ require "header.php";
           }
           }
             echo '<form class = "client-add" action="includes/client-input.inc.php" method="post">
-            <input type="text" name="clientname" placeholder="Client name...">
-            <input type="text" name="clientbusiness" placeholder="Client business...">
+            <input type="text" name="firstName" placeholder="Client name...">
+            <input type="text" name="lastName" placeholder="Client business...">
+                <select>
+                  <option value="Male">Male/option>
+                  <option value="Female">Female</option>
+                </select>
+            <input type="date" name="birthDate" >
+            <input type="text" name="telephone" placeholder="Client business...">
+            <input type="text" name="address" placeholder="Client name...">
+            <input type="text" name="religion" placeholder="Client business...">
+            <select>
+              <option value="single">Single/option>
+              <option value="married">Married</option>
+            </select>
             <button type="submit" name="client-submit">Add</button>
             </form>';
 
@@ -38,7 +50,7 @@ require "header.php";
 
   require 'includes/dbh.inc.php';
     $userid = $_SESSION['userId'];
-    $sql = "SELECT patientId,firstName,lastName FROM patients WHERE userId = " . $userid;
+    $sql = "SELECT patientId,firstName,lastName,gender,birthDate,telephone,address,religion,civilStatus FROM patients WHERE userId = " . $userid;
     $stmt = mysqli_stmt_init($conn);
   if(!mysqli_stmt_prepare($stmt,$sql)){
       header("Location: /patients.php?error=sqlerror");
@@ -50,8 +62,14 @@ require "header.php";
     echo '
       <table class = "clienttable">
       <tr>
-        <th>Client Name</th>
-        <th>Business Name</th>
+        <th>Patient Id</th>
+        <th>Name</th>
+        <th>Gender</th>
+        <th>Birth Date</th>
+        <th>Telephone</th>
+        <th>Address</th>
+        <th>Religion</th>
+        <th>Civil Status</th>
         <th></th>
         <th></th>
       </tr>';
@@ -59,8 +77,14 @@ require "header.php";
       if(mysqli_num_rows($result) > 0){
         while ($row = mysqli_fetch_assoc($result)) {
           echo "<tr>
-          <td>".$row["nameClient"]."</td>
-          <td>".$row["businessName"]."</td>
+          <td>".$row["patientId"]."</td>
+          <td>".$row["firstName"]. " ". $row["lastName"]."</td>
+          <td>".$row["gender"]."</td>
+          <td>".$row["birthDate"]."</td>
+          <td>".$row["telephone"]."</td>
+          <td>".$row["address"]."</td>
+          <td>".$row["religion"]."</td>
+          <td>".$row["civilStatus"]."</td>
           <td>".
           '<form class = "client-delete" action="includes/client-delete.inc.php" method="post">
           <button type="submit" name="client-delete">Delete</button>
