@@ -1,25 +1,38 @@
 <?php
 require "header.php";
- ?>
+?>
 
 <main>
        <?php
+       //show users of patient
+       //change to company and userId in future
+
        if(isset($_SESSION['userId'])){
+
          echo '<h1>'. ucwords($_SESSION['userUid'])."'s Patients". '</h1>';
+
          if(isset($_GET['error'])){
-           if($_GET['error']=="emptyfields"){
+           if($_GET['error']=="emptyfields")
+           {
              echo "<p class = signuperror>Please fill all fields</p>";
-           }elseif($_GET['error']=="invalidclientName"){
-             echo "<p class = signuperror>Invalid Client Name</p>";
-           }elseif($_GET['error']=="invalidclientBusiness"){
-             echo "<p class = signuperror>Invalid Client Business Name</p>";
-           }elseif(isset($_GET['signup'])){ {
-           if($_GET['signup']=="success"){
-             echo "<p class = signupsuccess> Success!</p>";
            }
+           elseif($_GET['error']=="invalidclientName")
+           {
+             echo "<p class = signuperror>Invalid Client Name</p>";
+           }
+           elseif($_GET['error']=="invalidclientBusiness")
+           {
+             echo "<p class = signuperror>Invalid Client Business Name</p>";
+           }
+           elseif(isset($_GET['signup']))
+           {
+                 if($_GET['signup']=="success")
+                 {
+                   echo "<p class = signupsuccess> Success!</p>";
+                 }
           }
           }
-          }
+
             echo '<form class = "client-add" action="includes/client-input.inc.php" method="post">
             <input type="text" name="firstName" placeholder="Client name...">
             <input type="text" name="lastName" placeholder="Client business...">
@@ -40,6 +53,7 @@ require "header.php";
 
             }else{
               echo "Kept you waiting huh?";
+            }
             }
          ?>
 </main>

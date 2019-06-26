@@ -7,12 +7,10 @@ require "classes/calendar.class.php";
 
        <?php
        if(isset($_SESSION['userId'])){
-
-date_default_timezone_set("America/New_York");
-            $transdate = date('m-d-Y', time());
-
-                 $d = date_parse_from_format("m-d-Y",$transdate);
-
+         //Set calendar month to current month
+                date_default_timezone_set("America/New_York");
+                $transdate = date('m-d-Y', time());
+                $d = date_parse_from_format("m-d-Y",$transdate);
                 $month = $d["month"];
                 $year = $d["year"];
 
