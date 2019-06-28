@@ -33,10 +33,10 @@ if(isset($_POST['patient-submit']))
                     {
                             if($gender=="male")
                             {
-                              $gender = 0;
+                              $gender = 1;
                             }else
                             {
-                              $gender = 1;
+                              $gender = 0;
                             }
 
                          mysqli_stmt_bind_param($stmt,"ssssssssi", $firstName,$lastName,$gender,$birthDate,$telephone,$address,$religion,$civilStatus,$userId);
