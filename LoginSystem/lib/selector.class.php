@@ -1,7 +1,7 @@
 <?php
 
-
-class selector
+/*
+class Selector
 {
 
   private $columnName;
@@ -15,7 +15,7 @@ class selector
     $this->userId = $userId;
   }
 
-  public function Show()
+  public function show()
   {
   require 'includes/dbh.inc.php';
   $sql = "SELECT" . $this->columnName . "FROM" . $this->tableName;
@@ -49,7 +49,5 @@ class selector
 
     }
 }
-
-
-
+*/
   ?>
