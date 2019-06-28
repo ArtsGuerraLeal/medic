@@ -74,7 +74,7 @@ require "lib/selector.class.php";
                               }
                           echo "</select>";
                           }
-
+                    }
 
 
             echo '<button type="submit" name="client-submit">Search</button>
