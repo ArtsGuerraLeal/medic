@@ -15,7 +15,7 @@ class Selector
     $this->userId = $userId;
   }
 
-/*
+
   public function show()
   {
   require 'includes/dbh.inc.php';
@@ -27,7 +27,7 @@ class Selector
           header("Location: /appointments.php?error=sqlerror");
           exit();
       }
-        else
+        /*else
         {
             $result = mysqli_query($conn, $sql);
           if(isset($_SESSION['userId']))
@@ -46,10 +46,10 @@ class Selector
         }
 
 
-      }
+      }*/
 
     }
 }
-*/
+
 }
   ?>
