@@ -35,7 +35,7 @@ require "lib/selector.class.php";
               }
           }
 
-            
+
 
             //Search Form
             echo '<form class = "client-add" action="includes/appointment-input.inc.php" method="post">
@@ -47,8 +47,8 @@ require "lib/selector.class.php";
             <input type="date" name="birthDate" >';
 
 
-            //  $selector = new selector("treatementName","treatements")
-            //  $selector->Show();
+              $selector = new selector("treatementName","treatements")
+              $selector->Show();
 
             echo '<button type="submit" name="client-submit">Search</button>
             </form>';
