@@ -32,8 +32,7 @@ class Selector
         else
         {
             $result = mysqli_query($conn, $sql);
-          if(isset($_SESSION['userId']))
-          {
+          
               if(mysqli_num_rows($result) > 0)
               {
                   echo "<p>" .$this->tableName. " Name:</p>";
@@ -45,7 +44,7 @@ class Selector
               echo "</select>";
               }
 
-        }
+
 
 
       }
