@@ -36,22 +36,22 @@ require "header.php";
 
             echo
             //Input Form
-            '<form class = "client-add" action="includes/client-input.inc.php" method="post">
-            <input type="text" name="firstName" placeholder="First Name...">
-            <input type="text" name="lastName" placeholder="Last Name...">
-                <select>
+            '<form class = "client-add" action="includes/patient-input.inc.php" method="post">
+            <input type="text" name="firstname" placeholder="First Name...">
+            <input type="text" name="lastname" placeholder="Last Name...">
+                <select name = "gender">
                   <option value="Male">Male</option>
                   <option value="Female">Female</option>
                 </select>
-            <input type="date" name="birthDate" >
-            <input type="text" name="telephone" placeholder="Client business...">
-            <input type="text" name="address" placeholder="Client name...">
-            <input type="text" name="religion" placeholder="Client business...">
-                <select>
+            <input type="date" name="birthdate" >
+            <input type="text" name="telephone" placeholder="Telephone...">
+            <input type="text" name="address" placeholder="Address...">
+            <input type="text" name="religion" placeholder="Religion...">
+                <select name = "civilstatus">
                   <option value="single">Single</option>
                   <option value="married">Married</option>
                 </select>
-            <button type="submit" name="client-submit">Add</button>
+            <button type="submit" name="patient-submit">Add</button>
             </form>';
 
             }

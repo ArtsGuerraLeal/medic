@@ -31,7 +31,6 @@ session_start();
         <li> <a href="#">Calendar</a> </li>
         <li> <a href="#">Treatements</a> </li>
         <li> <a href="#">Equipment</a> </li>
-
         <li> <a href="#">Users</a> </li>';
     }
 ?>
