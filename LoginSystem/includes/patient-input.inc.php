@@ -31,13 +31,21 @@ if(isset($_POST['patient-submit']))
                     }
                     else
                     {
+                            if($gender=="male")
+                            {
+                              $gender = 0;
+                            }else
+                            {
+                              $gender = 1;
+                            }
+
                          mysqli_stmt_bind_param($stmt,"ssssssssi", $firstName,$lastName,$gender,$birthDate,$telephone,$address,$religion,$civilStatus,$userId);
                          mysqli_stmt_execute($stmt);
                          header("Location: ../patients.php?clientadd=success");
                          exit();
                     }
               }
-  
+
           mysqli_stmt_close($stmt);
           mysqli_close($conn);
         }
