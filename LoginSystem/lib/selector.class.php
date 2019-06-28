@@ -21,7 +21,7 @@ class Selector
 
   require 'includes/dbh.inc.php';
 
-  $sql = "SELECT" . $this->columnName . "FROM" . $this->tableName;
+  $sql = "SELECT " . $this->columnName . "FROM" . $this->tableName;
   $stmt = mysqli_stmt_init($conn);
 
       if(!mysqli_stmt_prepare($stmt,$sql))

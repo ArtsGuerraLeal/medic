@@ -48,7 +48,34 @@ require "lib/selector.class.php";
 
 
               $selector = new Selector("patientId","patients",1);
-              $selector->Show();
+            //  $selector->Show();
+
+              require 'includes/dbh.inc.php';
+
+              $sql = "SELECT " . "patientId" . "FROM" . "patients";
+              $stmt = mysqli_stmt_init($conn);
+
+                  if(!mysqli_stmt_prepare($stmt,$sql))
+                  {
+                      header("Location: /appointments.php?error=sqlerror");
+                      exit();
+                  }
+                  else
+                  {
+                        $result = mysqli_query($conn, $sql);
+
+                          if(mysqli_num_rows($result) > 0)
+                          {
+                              echo "<p>" . "patients" . "Name:</p>";
+                              echo "<select name=  " ."patients". "-name>";
+                              while ($row = mysqli_fetch_assoc($result))
+                              {
+                                echo "<option>" . $row["patientId"] . "</option>";
+                              }
+                          echo "</select>";
+                          }
+
+
 
             echo '<button type="submit" name="client-submit">Search</button>
             </form>';
