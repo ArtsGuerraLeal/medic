@@ -8,7 +8,7 @@ require 'dbh.inc.php';
 $patientId = $_POST['patientid'];
 $userId = $_SESSION['userId'];
 
-if( empty($clientID) ){
+if( empty($patientId) ){
       header("Location: ../patients.php?error=emptyfields");
       exit();
 }else{
