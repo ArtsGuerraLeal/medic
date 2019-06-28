@@ -43,6 +43,7 @@ class Selector
                   }
               echo "</select>";
               }
+
               else{
                 echo "No treatements avaliable";
               }
