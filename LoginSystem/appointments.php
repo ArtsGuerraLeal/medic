@@ -1,6 +1,6 @@
 <?php
 require "header.php";
-//require "lib/selector.class.php";
+require "lib/selector.class.php";
 ?>
 
 <main>
