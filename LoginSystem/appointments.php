@@ -35,9 +35,9 @@ require "lib/selector.class.php";
               }
           }
 
-              echo "Somethings Wrong..";
+            
 
-          /*  //Search Form
+            //Search Form
             echo '<form class = "client-add" action="includes/appointment-input.inc.php" method="post">
 
             <input type="text" name="patientId" placeholder="Patient ID...">
@@ -53,7 +53,7 @@ require "lib/selector.class.php";
             echo '<button type="submit" name="client-submit">Search</button>
             </form>';
 
-            */
+
 
             }
 

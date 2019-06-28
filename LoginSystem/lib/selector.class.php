@@ -1,6 +1,6 @@
 <?php
 
-/*
+
 class Selector
 {
 
@@ -14,7 +14,7 @@ class Selector
     $this->tableName = $tableName;
     $this->userId = $userId;
   }
-
+/*
   public function show()
   {
   require 'includes/dbh.inc.php';
