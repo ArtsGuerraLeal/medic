@@ -48,7 +48,7 @@ require "lib/selector.class.php";
 
 
              echo "<p>Treatement: </p>";
-             $selector = new Selector("treatementName","treatements",1);
+             $selector = new Selector("patientName","patients",1);
              $selector->Show();
 
 
