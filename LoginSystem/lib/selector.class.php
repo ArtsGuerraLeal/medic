@@ -19,7 +19,7 @@ class Selector
   public function Show()
   {
       require 'includes/dbh.inc.php';
-        $sql = "SELECT patientId,firstName,lastName,gender,birthDate,telephone,address,religion,civilStatus FROM patients WHERE userId = " . 1;
+        $sql = "SELECT patientId FROM patients WHERE userId = " . 1;
         $stmt = mysqli_stmt_init($conn);
 
       if(!mysqli_stmt_prepare($stmt,$sql))
@@ -36,7 +36,7 @@ class Selector
               echo "<select name=  " .$this->tableName. "-name>";
               while ($row = mysqli_fetch_assoc($result))
               {
-                echo "<option>" . "Hello" . "</option>";
+                echo "<option>" . $row["$this->columnName"] . "</option>";
               }
           echo "</select>";
           }
