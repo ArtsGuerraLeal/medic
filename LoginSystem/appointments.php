@@ -48,11 +48,11 @@ require "lib/selector.class.php";
 
 
           //    $selector = new Selector("patientId","patients",1);
-            //  $selector->Show();
+          //    $selector->Show();
 
               require 'includes/dbh.inc.php';
 
-              $sql = "SELECT patientId FROM patients" ;
+              $sql = "SELECT " . "patientName". " FROM patients" ;
               $stmt = mysqli_stmt_init($conn);
 
                   if(!mysqli_stmt_prepare($stmt,$sql))
