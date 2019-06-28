@@ -23,7 +23,7 @@ require "header.php";
                 if(mysqli_num_rows($result) > 0){
 
                   echo '<div class = "TestDiv">';
-                  echo " <p>Client Name:</p>";
+                  echo "<p>Client Name:</p>";
                   echo '<form class = "hosting-add" action="includes/hosting-add.inc.php" method="post">';
                   echo '<select name="client-name">';
                   while ($row = mysqli_fetch_assoc($result)) {
