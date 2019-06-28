@@ -26,7 +26,7 @@ class Selector
 
       if(!mysqli_stmt_prepare($stmt,$sql))
       {
-          header("Location: /appointments.php?error=sqlerror");
+          header("Location: /appointments.php?error=sqlerror2");
           exit();
       }
       else
