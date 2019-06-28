@@ -1,5 +1,6 @@
 <?php
 require "header.php";
+require "lib/selector.class.php";
 ?>
 
 <main>
@@ -39,18 +40,16 @@ require "header.php";
             '<form class = "client-add" action="includes/appointment-input.inc.php" method="post">
 
             <input type="text" name="patientId" placeholder="Patient ID...">
-
             <input type="text" name="firstName" placeholder="First Name...">
             <input type="text" name="lastName" placeholder="Last Name...">
             <p>Birthdate: </p>
-            <input type="date" name="birthDate" >
+            <input type="date" name="birthDate" >';
 
-            <select>
-              <option value="single">Treatement 1</option>
-              <option value="married">Treatement 2</option>
-            </select>
 
-            <button type="submit" name="client-submit">Search</button>
+              $selector = new selector("treatementName","treatements")
+              $selector->Show();
+
+            echo '<button type="submit" name="client-submit">Search</button>
             </form>';
 
             }

@@ -27,10 +27,10 @@ session_start();
       echo
        '<li> <a href="patients.php">Patients</a> </li>
         <li> <a href="appointments.php">Appointments</a> </li>
-        <li> <a href="#">Calendar</a> </li>
         <li> <a href="#">Treatements</a> </li>
         <li> <a href="#">Equipment</a> </li>
-        <li> <a href="#">Users</a> </li>';
+        <li> <a href="#">Users</a> </li>
+        <li> <a href="#">Calendar</a> </li>';
     }
 ?>
 
