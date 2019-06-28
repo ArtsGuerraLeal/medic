@@ -19,7 +19,7 @@ class Selector
   public function Show()
   {
       require 'includes/dbh.inc.php';
-        $sql = "SELECT " . $this->columnName . " FROM ". $this->tableName ." WHERE userId = " . $this->userId;
+        $sql = "SELECT " . $this->columnName . " FROM ". $this->tableName ." WHERE userId = " .1;
         //die($sql);
         $stmt = mysqli_stmt_init($conn);
 
