@@ -21,7 +21,7 @@ class Selector
 
   require 'includes/dbh.inc.php';
 
-  $sql = "SELECT " . "patientName" . "FROM" . "patients";
+  $sql = "SELECT patientName FROM patients";
   $stmt = mysqli_stmt_init($conn);
 
       if(!mysqli_stmt_prepare($stmt,$sql))
