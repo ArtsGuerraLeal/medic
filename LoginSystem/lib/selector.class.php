@@ -28,9 +28,8 @@ class Selector
           header("Location: /appointments.php?error=sqlerror");
           exit();
       }
-
-        else
-        {
+      else
+      {
             $result = mysqli_query($conn, $sql);
 
               if(mysqli_num_rows($result) > 0)
@@ -39,7 +38,7 @@ class Selector
                   echo "<select name=  " .$this->tableName. "-name>";
                   while ($row = mysqli_fetch_assoc($result))
                   {
-                    echo "<option>" . $row[" ".$this->columnName." "] . "</option>";
+                    echo "<option>" . "Hello" . "</option>";
                   }
               echo "</select>";
               }
