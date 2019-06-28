@@ -48,7 +48,7 @@ require "lib/selector.class.php";
 
 
               $selector = new Selector("treatementName","treatements")
-              $selector->show();
+            //  $selector->show();
 
             echo '<button type="submit" name="client-submit">Search</button>
             </form>';
