@@ -7,7 +7,7 @@ require "lib/selector.class.php";
        <?php
        //show users of patient
        //change to company and userId in future
-  echo "Somethings Wrong..";
+
        if(isset($_SESSION['userId'])){
 
          echo '<h1>'. ucwords($_SESSION['userUid'])."'s Appointments". '</h1>';
@@ -35,9 +35,10 @@ require "lib/selector.class.php";
               }
           }
 
-            echo
-            //Search Form
-            '<form class = "client-add" action="includes/appointment-input.inc.php" method="post">
+              echo "Somethings Wrong..";
+
+          /*  //Search Form
+            echo '<form class = "client-add" action="includes/appointment-input.inc.php" method="post">
 
             <input type="text" name="patientId" placeholder="Patient ID...">
             <input type="text" name="firstName" placeholder="First Name...">
@@ -52,7 +53,10 @@ require "lib/selector.class.php";
             echo '<button type="submit" name="client-submit">Search</button>
             </form>';
 
+            */
+
             }
+
             else
             {
               echo "Somethings Wrong..";
