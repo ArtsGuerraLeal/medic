@@ -47,9 +47,9 @@ require "lib/selector.class.php";
             <input type="date" name="birthDate" >';
 
 
-             $selector = new Selector("patientId","patients",1);
+      //       $selector = new Selector("patientId","patients",1);
           //   $selector->Show();
-
+/*
               require 'includes/dbh.inc.php';
 
               $sql = "SELECT " . "patientName". " FROM patients" ;
@@ -75,7 +75,7 @@ require "lib/selector.class.php";
                           echo "</select>";
                           }
                     }
-
+  */
 
             echo '<button type="submit" name="client-submit">Search</button>
             </form>';
