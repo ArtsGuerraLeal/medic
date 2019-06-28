@@ -24,33 +24,28 @@ class Selector
 
       if(!mysqli_stmt_prepare($stmt,$sql))
       {
-          header("Location: /appointments.php?error=sqlerror2");
+          header("Location: /appointments.php?error=sqlerror");
           exit();
       }
       else{
-        echo "<p>Hello there </p>";
-      }
-      /*
-      else
-      {
-            $result = mysqli_query($conn, $sql);
+        $result = mysqli_query($conn, $sql);
 
-              if(mysqli_num_rows($result) > 0)
+          if(mysqli_num_rows($result) > 0)
+          {
+              echo "<p>" . $this->tableName . "Name:</p>";
+              echo "<select name=  " .$this->tableName. "-name>";
+              while ($row = mysqli_fetch_assoc($result))
               {
-                  echo "<p>" . $this->tableName . "Name:</p>";
-                  echo "<select name=  " .$this->tableName. "-name>";
-                  while ($row = mysqli_fetch_assoc($result))
-                  {
-                    echo "<option>" . "Hello" . "</option>";
-                  }
-              echo "</select>";
+                echo "<option>" . "Hello" . "</option>";
               }
+          echo "</select>";
+          }
 
-              else{
-                echo "No treatements avaliable";
-              }
+          else{
+            echo "No treatements avaliable";
+          }
+      }
 
-                */
 
 
       }
