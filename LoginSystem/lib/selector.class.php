@@ -18,9 +18,9 @@ class Selector
 
   public function Show()
   {
-require 'includes/dbh.inc.php';
-        $sql = "SELECT patientName from patients";
-          $stmt = mysqli_stmt_init($conn);
+      require 'includes/dbh.inc.php';
+        $sql = "SELECT patientId,firstName,lastName,gender,birthDate,telephone,address,religion,civilStatus FROM patients WHERE userId = " . 1;
+        $stmt = mysqli_stmt_init($conn);
 
       if(!mysqli_stmt_prepare($stmt,$sql))
       {
