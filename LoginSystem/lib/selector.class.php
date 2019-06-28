@@ -19,7 +19,7 @@ class Selector
   public function Show()
   {
       require 'includes/dbh.inc.php';
-        $sql = "SELECT patientId FROM patients WHERE userId = " . 1;
+        $sql = "SELECT" . $this->columnName . "FROM ".    $this->tableName ." WHERE userId = " . 1;
         $stmt = mysqli_stmt_init($conn);
 
       if(!mysqli_stmt_prepare($stmt,$sql))
