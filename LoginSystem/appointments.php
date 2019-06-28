@@ -47,7 +47,7 @@ require "lib/selector.class.php";
             <input type="date" name="birthDate" >';
 
 
-              $selector = new Selector("patientId","patients",1);
+          //    $selector = new Selector("patientId","patients",1);
             //  $selector->Show();
 
               require 'includes/dbh.inc.php';
