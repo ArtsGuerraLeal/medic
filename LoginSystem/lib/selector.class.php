@@ -16,10 +16,11 @@ class Selector
   }
 
 
-  public function show()
+  public function Show()
   {
 
   require 'includes/dbh.inc.php';
+
   $sql = "SELECT" . $this->columnName . "FROM" . $this->tableName;
   $stmt = mysqli_stmt_init($conn);
 
@@ -41,6 +42,9 @@ class Selector
                     echo "<option>" . "Hello" . "</option>";
                   }
               echo "</select>";
+              }
+              else{
+                echo "No treatements avaliable";
               }
 
 
