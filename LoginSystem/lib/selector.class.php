@@ -36,12 +36,12 @@ class Selector
               if(mysqli_num_rows($result) > 0)
               {
                   echo "<p>" . $this->tableName . "Name:</p>";
-              //    echo "<select name=  " .$this->tableName. "-name"">";
+                  echo "<select name=  " .$this->tableName. "-name>";
                   while ($row = mysqli_fetch_assoc($result))
                   {
-              //      echo "<option>" . $row[" ".$this->columnName." "] . "</option>";
+                    echo "<option>" . $row[" ".$this->columnName." "] . "</option>";
                   }
-        //      echo "</select>";
+              echo "</select>";
               }
 
 
