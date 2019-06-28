@@ -14,6 +14,7 @@ class Selector
     $this->tableName = $tableName;
     $this->userId = $userId;
   }
+
 /*
   public function show()
   {
@@ -50,4 +51,5 @@ class Selector
     }
 }
 */
+}
   ?>
