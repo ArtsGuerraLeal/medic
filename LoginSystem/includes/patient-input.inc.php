@@ -34,7 +34,8 @@ if(isset($_POST['patient-submit']))
                             if($gender=="male")
                             {
                               $gender = 1;
-                            }else
+                            }
+                            else
                             {
                               $gender = 0;
                             }

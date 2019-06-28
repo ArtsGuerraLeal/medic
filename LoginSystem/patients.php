@@ -122,17 +122,17 @@ require "header.php";
           <td>".$row["civilStatus"]."</td>
           <td>".
 
-          '<form class = "client-delete" action="includes/client-delete.inc.php" method="post">
-          <button type="submit" name="client-delete">Delete</button>
-          <input type="hidden" name="idClient" value="'.$row["idClient"].' ">
+          '<form class = "client-delete" action="includes/patient-delete.inc.php" method="post">
+          <button type="submit" name="patient-delete">Delete</button>
+          <input type="hidden" name="patientid" value="'.$row["patientId"].' ">
           </form>'
 
           .
           "</td>
           <td>"
           .'<form class = "client-details" action="includes/client-details.inc.php" method="post">
-          <button type="submit" name="client-details">Details</button>
-          <input type="hidden" name="idClient" value="'.$row["idClient"].' ">
+          <button type="submit" name="patient-details">Details</button>
+          <input type="hidden" name="patientid" value="'.$row["patientId"].' ">
           </form>'
           ."</td>
           </tr>";
