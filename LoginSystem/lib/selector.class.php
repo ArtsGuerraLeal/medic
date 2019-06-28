@@ -28,7 +28,7 @@ class Selector
           header("Location: /appointments.php?error=sqlerror");
           exit();
       }
-      /*
+
         else
         {
             $result = mysqli_query($conn, $sql);
@@ -48,7 +48,7 @@ class Selector
         }
 
 
-      }*/
+      }
 
     }
 }
