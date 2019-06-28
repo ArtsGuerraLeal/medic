@@ -19,7 +19,7 @@ class Selector
   public function Show()
   {
       require 'includes/dbh.inc.php';
-        $sql = "SELECT " . $this->columnName . " FROM ". $this->tableName ." WHERE userId = " . 1;
+        $sql = "SELECT " . $this->columnName . " FROM ". $this->tableName ." WHERE userId = " . $this->userId;
         //die($sql);
         $stmt = mysqli_stmt_init($conn);
 
@@ -33,7 +33,7 @@ class Selector
 
           if(mysqli_num_rows($result) > 0)
           {
-              echo "<p>" . $this->tableName . "Name:</p>";
+
               echo "<select name=  " .$this->tableName. "-name>";
               while ($row = mysqli_fetch_assoc($result))
               {
@@ -43,7 +43,7 @@ class Selector
           }
 
           else{
-            echo "No treatements avaliable";
+            echo "No ".$this->tableName." avaliable";
           }
       }
 
