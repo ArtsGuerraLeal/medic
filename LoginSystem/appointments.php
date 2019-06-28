@@ -52,7 +52,7 @@ require "lib/selector.class.php";
 
               require 'includes/dbh.inc.php';
 
-              $sql = "SELECT patientId FROM patients";
+              $sql = "SELECT patientId FROM patients" ;
               $stmt = mysqli_stmt_init($conn);
 
                   if(!mysqli_stmt_prepare($stmt,$sql))
