@@ -7,7 +7,7 @@ require "lib/selector.class.php";
        <?php
        //show users of patient
        //change to company and userId in future
-
+  echo "Somethings Wrong..";
        if(isset($_SESSION['userId'])){
 
          echo '<h1>'. ucwords($_SESSION['userUid'])."'s Appointments". '</h1>';
