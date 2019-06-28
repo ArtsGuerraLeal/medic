@@ -40,8 +40,8 @@ require "header.php";
             <input type="text" name="firstname" placeholder="First Name...">
             <input type="text" name="lastname" placeholder="Last Name...">
                 <select name = "gender">
-                  <option value="Male">Male</option>
-                  <option value="Female">Female</option>
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
                 </select>
             <input type="date" name="birthdate" >
             <input type="text" name="telephone" placeholder="Telephone...">
