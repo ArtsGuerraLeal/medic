@@ -48,7 +48,7 @@ require "lib/selector.class.php";
 
 
              $selector = new Selector("patientId","patients",1);
-              $selector->Show();
+            $selector->Show();
 
               require 'includes/dbh.inc.php';
 

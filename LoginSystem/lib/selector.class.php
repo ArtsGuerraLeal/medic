@@ -19,9 +19,7 @@ class Selector
   public function Show()
   {
 
-
-
-        $sql = "SELECT " . "patientName". " FROM patients" ;
+        $sql = "SELECT patientName from patients";
           $stmt = mysqli_stmt_init($conn);
 
       if(!mysqli_stmt_prepare($stmt,$sql))
@@ -29,6 +27,10 @@ class Selector
           header("Location: /appointments.php?error=sqlerror2");
           exit();
       }
+      else{
+        echo "<p>Hello there </p>";
+      }
+      /*
       else
       {
             $result = mysqli_query($conn, $sql);
@@ -48,7 +50,7 @@ class Selector
                 echo "No treatements avaliable";
               }
 
-
+                */
 
 
       }
