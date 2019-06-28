@@ -47,7 +47,7 @@ require "lib/selector.class.php";
             <input type="date" name="birthDate" >';
 
 
-              $selector = new Selector("treatementName","treatements")
+              $selector = new Selector("treatementName","treatements",1);
             //  $selector->show();
 
             echo '<button type="submit" name="client-submit">Search</button>
