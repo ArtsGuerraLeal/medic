@@ -1,5 +1,5 @@
 <?php
-
+require 'includes/dbh.inc.php';
 
 class Selector
 {
@@ -19,7 +19,7 @@ class Selector
   public function Show()
   {
 
-  require 'includes/dbh.inc.php';
+
 
         $sql = "SELECT " . "patientName". " FROM patients" ;
           $stmt = mysqli_stmt_init($conn);
