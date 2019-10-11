@@ -1,0 +1,15 @@
+{
+    "name": "arts/login-system",
+    "description": "hello",
+    "authors": [
+        {
+            "name": "ArtsGuerraLeal",
+            "email": "guerraarturo11@gmail.com"
+        }
+    ],
+    "require": {
+        "twilio/sdk": "^5.34",
+        "vlucas/phpdotenv": "^3.4",
+        "mpdf/mpdf": "^8.0"
+    }
+}

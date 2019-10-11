@@ -1,21 +1,24 @@
 <?php
-require "header.php";
- ?>
+//require "header.php";
+ //?>
+ <?php
+ session_start();
+  ?>
 
-     <main>
        <?php
        //Show if User is logged in
-       if(isset($_SESSION['userId'])){
-            echo '<h1 class=login-status>Welcome</h1>';
-            echo '<img src="img/underconstruction.png" alt="nya">';
+      if(isset($_SESSION['userId'])){
+        header("Location: ../dashboard.php");
 
             }else{
-              echo '<h1 class=logout-status>Please be patient</h1>';
-              echo '<img src="img/underconstruction.png" alt="nya">';
+              header("Location: ../landing.php");
+
+
+
             }
         ?>
-     </main>
+
 
  <?php
- require "footer.php";
+/// require "footer.php";
   ?>

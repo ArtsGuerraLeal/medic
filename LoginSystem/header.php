@@ -2,60 +2,45 @@
 session_start();
  ?>
 
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-    <link rel="stylesheet" href="css/style.css">
+ <!DOCTYPE html>
+ <html lang="en">
 
-  </head>
+ <head>
+
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <meta name="description" content="">
+   <meta name="author" content="">
+
+   <title>MediSystem</title>
+
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+   <!-- Custom fonts for this template-->
+   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+     <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
+   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+   <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+   <!-- Custom styles for this template-->
+   <link href="css/sb-admin-2.min.css" rel="stylesheet">
+
+   <link href="css/landing-page.min.css" rel="stylesheet">
+   <link href="css/croppie.css" rel="stylesheet">
+   <script src="js/tabbedForm.js">  </script>
+   <script src="js/imagePreview.js"></script>
+
+
+
+
+
+
+ </head>
+
   <body>
 
-<header>
-
-<nav class="nav-header-main">
-
-  <a class="header-logo" href="index.php">
-    <img src="img/logo3.png" alt="logo" width="60" height="60">
-  </a>
-  <ul class="nav-links">
-    <li> <a class="active" href="index.php">Home</a> </li>
-
-    <?php
-    if(isset($_SESSION['userId'])){
-      echo
-       '<li> <a href="patients.php">Patients</a> </li>
-        <li> <a href="appointments.php">Appointments</a> </li>
-        <li> <a href="treatements.php">Treatements</a> </li>
-        <li> <a href="equipment.php">Equipment</a> </li>
-        <li> <a href="users.php">Users</a> </li>
-        <li> <a href="calendar.php">Calendar</a> </li>';
-    }
-?>
-
-  </ul>
-  <div class="header-login">
-
- <?php
- if(isset($_SESSION['userId'])){
-   echo '<p>'. ucwords($_SESSION['userUid']). '</p>';
-   echo '<form class = "form-logout" action="includes/logout.inc.php" method="post">
-               <button type="submit" name="logout-submit">Logout</button>
-             </form>';
-      }else{
-        echo '<form class = "form-login" action="includes/login.inc.php" method="post">
-          <input type="text" name="mailuid" placeholder="Username/Email...">
-          <input type="password" name="pwd" placeholder="Password...">
-          <button type="submit" name="login-submit">Login</button>
-          <a href="signup.php">Signup</a>
-        </form>';
-      }
-
-   ?>
-</div>
-
-
-</nav>
-
-</header>
+  <?php
+  require "navbar.php";
+  require "lib/selector.class.php";
+  require "lib/calendar.class.php";
+  ?>

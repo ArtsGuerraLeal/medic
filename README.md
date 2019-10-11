@@ -1,2 +1,2 @@
 # medic
-Software Medico
+Software Medico Yeet

@@ -1,156 +1,145 @@
 <?php
 require "header.php";
-require "lib/selector.class.php";
 ?>
 
-<main>
        <?php
+
        //show users of patient
        //change to company and userId in future
 
        if(isset($_SESSION['userId'])){
 
-         echo '<h1>'. ucwords($_SESSION['userUid'])."'s Appointments". '</h1>';
+           echo '<div class="container-fluid">
+           <h1 class="h3 mb-0 text-gray-800">'. ucwords($_SESSION['userUid'])."'s Apointments".'</h1>
+           <p class="mb-4">Add Treatments</p>';
 
-         if(isset($_GET['error']))
-         {
-               if($_GET['error']=="emptyfields")
-               {
-                 echo "<p class = signuperror>Please fill all fields</p>";
-               }
-               elseif($_GET['error']=="invalidclientName")
-               {
-                 echo "<p class = signuperror>Invalid Client Name</p>";
-               }
-               elseif($_GET['error']=="invalidclientBusiness")
-               {
-                 echo "<p class = signuperror>Invalid Client Business Name</p>";
-               }
-               elseif(isset($_GET['signup']))
-               {
-                     if($_GET['signup']=="success")
-                     {
-                       echo "<p class = signupsuccess> Success!</p>";
-                     }
-              }
-          }
+           echo
+           //Input Form
+           '<div class="card shadow mb-4">
+             <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Appointments</h6>';
 
 
+            echo '<div class="nav tab">
+              <button class="tablinks nav-item my-1 mx-1 btn btn-primary" onclick="openTab(event,'. "'Tab1'" .')" id="defaultOpen">Appointment Info</button>
+                </div>';
 
-            //Search Form
-            echo '<form class = "client-add" action="includes/appointment-input.inc.php" method="post">
-
-            <input type="text" name="patientId" placeholder="Patient ID...">
-            <input type="text" name="firstName" placeholder="First Name...">
-            <input type="text" name="lastName" placeholder="Last Name...">
-            <p>Birthdate: </p>
-            <input type="date" name="birthDate" >';
-
-
-             echo "<p>Treatement: </p>";
-             $selector = new Selector("treatementName","treatements",1);
-             $selector->Show();
+            echo '</div>
+             <div class="card-body">
+            <form action="includes/appointment-input.inc.php" method="post">
+             <div id="Tab1" class="tabcontent" >
+               <div class="form-row">
+                 <div class="form-group col-md-6">';
 
 
-            echo '<button type="submit" name="client-submit">Search</button>
-            </form>';
+                   echo '<label class="my-2 font-weight-bold" for="treatmentname">Patient ID</label> ';
+                   $selector = new Selector("patientId","patients",$_SESSION['companyId'],"patientid");
+                   $selector->Show();
+
+                   echo '<label class="my-2 font-weight-bold" for="treatmentcost">Cost</label>
+                   <input type="text" class="form-control font-weight-light" id="treatmentcost" name="treatmentcost" placeholder="Cost">
+
+                   <label class="my-2 font-weight-bold" for="appointmentdate">Date</label>
+
+                   <input type="date" class="form-control" id="appointmentdate" name="appointmentdate">
+                   <label class="my-2 font-weight-bold" for="appointmentdate">Time</label>
+
+                   <input type="time" class="form-control" id="appointmentdate" name="appointmenttime">
 
 
 
-            }
 
-            else
-            {
-              echo "Somethings Wrong..";
-            }
+                   <label class="my-2 font-weight-bold" for="treatmentcost">Discount</label>
+                   <input type="text" class="form-control font-weight-light" id="discount" name="treatmentdiscount" placeholder="Discount">';
 
-         ?>
-</main>
+                   echo '<label class="my-2 font-weight-bold" for="equipmentused">Treatment 1</label>';
 
-<main>
-  <?php
-  //Select patient info and display in the table
-  require 'includes/dbh.inc.php';
-    $userid = $_SESSION['userId'];
-    $sql = "SELECT patientId,firstName,lastName,gender,birthDate,telephone,address,religion,civilStatus FROM patients WHERE userId = " . $userid;
-    $stmt = mysqli_stmt_init($conn);
-  if(!mysqli_stmt_prepare($stmt,$sql))
-      {
-          header("Location: /appointments.php?error=sqlerror");
-          exit();
-      }
-  else
-  {
-    $result = mysqli_query($conn, $sql);
-    if(isset($_SESSION['userId']))
-    {
-    echo
-    '<table class = "clienttable">
-      <tr>
-        <th>Appointment ID</th>
-        <th>Patient ID</th>
-        <th>Name</th>
-        <th>Age</th>
-        <th>Treatement</th>
-        <th>Treatement Date</th>
-        <th></th>
-        <th></th>
-      </tr>';
+                   $selector = new Selector("treatmentName","treatments",$_SESSION['companyId'],"treatment1");
+                   $selector->Show();
 
-      if(mysqli_num_rows($result) > 0)
-      {
-        while ($row = mysqli_fetch_assoc($result))
-        {
-          echo
-          "<tr>
-          <td>".$row["patientId"]."</td>
-          <td>".$row["firstName"]. " ". $row["lastName"]."</td>
-          <td>";
+                   echo '<label class="my-2 font-weight-bold" for="equipmentused">Treatment 2</label>';
 
-          echo "</td>
-          <td>";
+                   $selector = new Selector("treatmentName","treatments",$_SESSION['companyId'],"treatment2");
+                   $selector->Show();
 
-          date_default_timezone_set("America/New_York");
-          $transdate = date('m-d-Y', time());
-          $d = date_parse_from_format("Y-m-d",$row["birthDate"]);
-          $month = $d["month"];
-          $year = $d["year"];
-          $age =  date("Y") - $year;
+                   echo '<label class="my-2 font-weight-bold" for="equipmentused">Treatment 3</label>';
 
-          echo $age;
+                   $selector = new Selector("treatmentName","treatments",$_SESSION['companyId'],"treatment3");
+                   $selector->Show();
+
+                   echo '<label class="my-2 font-weight-bold" for="equipmentused">Treatment 4</label>';
+
+                   $selector = new Selector("treatmentName","treatments",$_SESSION['companyId'],"treatment4");
+                   $selector->Show();
 
 
-          echo "</td>
-          <td>"."Treatement"."</td>
-          <td>".""."</td>
 
-          <td>".
 
-          '<form class = "client-delete" action="includes/client-delete.inc.php" method="post">
-          <button type="submit" name="client-delete">Delete</button>
-          <input type="hidden" name="idClient" value="'.$row["idClient"].' ">
-          </form>'
 
-          .
-          "</td>
-          <td>"
-          .'<form class = "client-details" action="includes/client-details.inc.php" method="post">
-          <button type="submit" name="client-details">Details</button>
-          <input type="hidden" name="idClient" value="'.$row["idClient"].' ">
-          </form>'
-          ."</td>
-          </tr>";
-        }
-      }
-      else
-      {
-        echo "</table>
-        <p> No results</p>";
-      }
-     }
-    }
+                   echo '
+
+                 </div>
+               </div>
+
+               <div class="form-row"> </div>
+
+             </div>
+
+            <div id="Tab2" class="tabcontent">
+              <div class="form-row">
+                <div class="form-group col-md-2">
+
+                  <label class="my-2 font-weight-bold" for="birthdate">Birthdate</label>
+                  <input type="date" class="form-control" id="birthdate" name="birthdate">
+
+                  <label class="my-2 font-weight-bold" for="gender">Gender</label>
+                  <select id="gender" class="form-control" name="gender">
+                    <option selected>Male</option>
+                    <option>Female</option>
+                  </select>
+
+                  <label class="my-2 font-weight-bold" for="religion">Religion</label>
+                  <input type="text" class="form-control" id="religion" placeholder="Religion">
+
+                    <label class="my-2 font-weight-bold" for="civilstatus">Civil Status</label>
+                    <select id="civilstatus" class="form-control" name="civilstatus">
+                      <option selected>Single</option>
+                      <option>Married</option>
+                    </select>
+
+                </div>
+               </div>
+              </div>
+
+             <div id="Tab3" class="tabcontent">
+
+             </div>
+
+             <div class="form-group col-md-2">
+               <button type="submit" class="btn btn-primary btn-sm" name="treatment-submit">Add</button>
+               <button type="submit" class="btn btn-secondary btn-sm">Cancel</button>
+             </div>
+
+             </form>
+
+           </div>
+           </div>
+           </div>';
+
+
+
+       }else {
+         echo "Somethings wrong...";
+       }
  ?>
-</main>
+
+
+
+ <script>
+ document.getElementById("defaultOpen").click();
+ </script>
+
+
 
  <?php
  require "footer.php";

@@ -20,7 +20,8 @@ class Calendar
   }
 
   public function show(){
-    $output  = '<table class = "calendar">';
+
+    $output  = '<table class = "table calendar">';
     $output .= '<caption>' . $this->date_info['month'] . ' ' . $this->year . '</caption>';
     $output .= '<tr>';
 
@@ -53,11 +54,11 @@ class Calendar
             if(isset($_SESSION['userId'])){
 
              $userid = $_SESSION['userId'];
-             $sql = "SELECT domain FROM hosting WHERE EXTRACT(DAY FROM hostingDateStart) = $current_day AND EXTRACT(MONTH FROM hostingDateStart) = $this->month AND EXTRACT(YEAR FROM hostingDateStart) = $this->year AND idUsers = ".$userid ;
-             $sql2 = "SELECT domain FROM hosting WHERE EXTRACT(DAY FROM hostingDateRenew) = $current_day AND EXTRACT(MONTH FROM hostingDateRenew) = $this->month AND EXTRACT(YEAR FROM hostingDateRenew) = $this->year AND idUsers = ".$userid ;
+             $sql = "SELECT patientId FROM appointments WHERE EXTRACT(DAY FROM appointmentDate) = $current_day AND EXTRACT(MONTH FROM appointmentDate) = $this->month AND EXTRACT(YEAR FROM appointmentDate) = $this->year AND userId = 4" ;
+             $sql2 = "SELECT patientId FROM appointments WHERE EXTRACT(DAY FROM appointmentDate) = $current_day AND EXTRACT(MONTH FROM appointmentDate) = $this->month AND EXTRACT(YEAR FROM appointmentDate) = $this->year AND userId = 4" ;
              $stmt = mysqli_stmt_init($conn);
            if(!mysqli_stmt_prepare($stmt,$sql)){
-               header("Location: /hosting.php?error=sqlerror");
+               header("Location: /cal.php?error=sqlerror");
                exit();
            }else {
              $result = mysqli_query($conn, $sql);
@@ -67,12 +68,13 @@ class Calendar
                   $output .= '<td class = "day">' . $current_day;
 
                   while ($rowX = mysqli_fetch_assoc($result)) {
-                     $output .= "<br>"."Inicio: ".$rowX["domain"];
+                     $output .= "<br>"."Inicio: ".$rowX["patientId"];
                   }
 
 
                  while ($rowY = mysqli_fetch_assoc($result2)) {
-                    $output .= "<br>"."Expira: ".$rowY["domain"];
+                    $output .= "<br>"."Expira: ".$rowY["patientId"];
+
                  }
 
 
@@ -98,7 +100,6 @@ class Calendar
     $output .= '</table>';
 
     echo $output;
-
   }
 }
 
